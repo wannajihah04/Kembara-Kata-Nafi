@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: #0f172a;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Cute Neobrutalism Shadow Utilities */
+.shadow-neo {
+  box-shadow: 3px 3px 0px #0f172a;
+}
+
+.shadow-neo-sm {
+  box-shadow: 2px 2px 0px #0f172a;
+}
+
+.shadow-neo-lg {
+  box-shadow: 5px 5px 0px #0f172a;
+}
+
+.shadow-neo-orange {
+  box-shadow: 4px 4px 0px #c2410c;
+}
+
+.shadow-neo-emerald {
+  box-shadow: 4px 4px 0px #065f46;
+}
+
+.shadow-neo-sky {
+  box-shadow: 4px 4px 0px #0369a1;
+}
+
+/* Cute Neobrutalism Interactive Buttons */
+.btn-neo {
+  transition: all 0.12s ease-in-out;
+  border: 2px solid #0f172a;
+  box-shadow: 3px 3px 0px #0f172a;
+}
+
+.btn-neo:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #0f172a;
+}
+
+.btn-neo:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #0f172a;
+}
+
+.card-neo {
+  border: 2.5px solid #0f172a;
+  box-shadow: 4px 4px 0px #0f172a;
+  border-radius: 1.25rem;
+}
+
+/* Float & Cloud Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateX(-40px); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(-40px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes kineticBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  25% {
+    transform: translateY(-16px) scale(0.92, 1.12);
+  }
+  45% {
+    transform: translateY(0) scale(1.1, 0.9);
+  }
+  60% {
+    transform: translateY(-6px) scale(0.97, 1.03);
+  }
+  75% {
+    transform: translateY(0) scale(1.02, 0.98);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-cloud {
+  animation: cloudDrift 20s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-kinetic {
+  display: inline-block;
+  animation: kineticBounce 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  will-change: transform;
+}
+
+/* Print Styles for PBD Slip */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-pbd-slip, #printable-pbd-slip * {
+    visibility: visible;
+  }
+  #printable-pbd-slip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

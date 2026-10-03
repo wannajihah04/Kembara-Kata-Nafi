@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Kembara Kata Nafi - Aplikasi Pembelajaran Interaktif",
+  "description": "Aplikasi pembelajaran interaktif Bahasa Melayu bagi topik Kata Nafi (Bukan vs Tidak) merangkumi nota, formula mnemonik, permainan 4 aras dan dashboard pentaksiran guru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
